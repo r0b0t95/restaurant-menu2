@@ -134,12 +134,10 @@ document.getElementById('place-order').addEventListener('click', () => {
 
 const whatsApp = () => {
     const phoneNumber = "50684006669";
-    const message = "Hola Frander: ";
-    //const whatsappURL = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(message)}`;
-    const whatsappURL = 'https://api.whatsapp.com/send?phone=50684006669&text=hola+desde+red';
-    window.open(whatsappURL);
-    //const formattedList = formatList(list);
-    //const whatsappLink = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(baseText + formattedList)}`;
+    const baseText = "El pedido se realizó desde la web: ";
+    const formattedList = formatList(list);
+    const whatsappLink = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(baseText + formattedList)}`;
+    window.open(whatsappLink);
 };
 
 const formatList = (formatOrder) => {
