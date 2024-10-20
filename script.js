@@ -125,7 +125,6 @@ document.getElementById('place-order').addEventListener('click', () => {
     if (order.length === 0 || order.length === null) {
         alert('Su pedido está vacío. Por favor, añada algunas comidas..');
     } else {
-        console.log('hola desde realizar pedido')
         whatsApp();
         alert('Pedido realizado con éxito!');
         cleanOrder();
@@ -135,13 +134,10 @@ document.getElementById('place-order').addEventListener('click', () => {
 const whatsApp = () => {
     const phoneNumber = "50684006669";
     const baseText = "El pedido se realizó desde la web: ";
-    const formattedList = formatList(list);
-    const whatsappLink = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(baseText + formattedList)}`;
-    window.open(whatsappLink);
-};
-
-const formatList = (formatOrder) => {
-    return formatOrder.join(", ");
+    const formattedList = OrderText(order);
+    const waLink = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(baseText + formattedList)}`;
+    console.log(waLink);
+    window.open(waLink);
 };
 
 const displayOrder = () => {
@@ -157,8 +153,18 @@ document.getElementById('watch-order').addEventListener('click', () => {
         h += `Precio: ${order[i].price * order[i].quantity} \n`;
         h += '***************************** \n';
     }
-    alert(h);
+    return h;
 });
+
+const OrderText = () => {
+    h = 'El pedido se realizó desde la web: ';
+    for (let i = 0; i < order.length; i++){
+        h += `(${order[i].quantity}) `;
+        h += `${order[i].name}, \n`;
+    }
+    console.log(h);
+    return h;
+}
 
 // Event listener for clean the order
 document.getElementById('remove-order').addEventListener('click', () => {
