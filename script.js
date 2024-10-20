@@ -133,14 +133,11 @@ document.getElementById('place-order').addEventListener('click', () => {
 });
 
 const whatsApp = () => {
-    //const phoneNumber = "50684006669";
-    //const message = "Hola Frander: ";
-    // Construct the WhatsApp URL
+    const phoneNumber = "50684006669";
+    const message = "Hola Frander: ";
     //const whatsappURL = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(message)}`;
-    //const whatsappURL = 'https://api.whatsapp.com/send?phone=50684006669&text=hola+desde+red';
-    // Open WhatsApp chat with the message pre-filled
-    //window.open(whatsappURL);
-    window.open('https://www.google.com')
+    const whatsappURL = 'https://api.whatsapp.com/send?phone=50684006669&text=hola+desde+red';
+    window.open(whatsappURL);
     //const formattedList = formatList(list);
     //const whatsappLink = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(baseText + formattedList)}`;
 };
