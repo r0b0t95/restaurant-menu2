@@ -20,13 +20,30 @@
         <nav class="navbar navbar-expand-lg navbar-dark">
             <img src="https://iili.io/dpM4NTv.png" alt="logo.png" border="0">
             <input type="text" id="orderUser" class="form-control  w-100" placeholder="A nombre de el pedido...">
-
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-nav" aria-controls="navbar-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbar-nav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#hamburguesas">Hamburguesas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#burritos">Burritos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#tacos">Tacos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#papas">Papas</a>
+                    </li>
+                </ul>
+            </div>
         </nav>
     </div>
   </header>
 
   <main>
-
     <div class="container">
         <div class="row">
 
@@ -48,27 +65,164 @@
             <!-- Menu Section -->
             <div class="col-md-8">
                 <div class="menu-container">
-                    <!-- Food Category: Burgers -->
+
+                    <!-- Food Category: Hamburguesas -->
                     <div class="food-category card mb-4 shadow-sm">
                         <div class="card-body">
-                            <h2 class="card-title text-center text-primary">Hamburguesas</h2>
+                            <h1 class="card-title text-center text-primary" id="hamburguesas">Hamburguesas</h2>
+                            <!-- Hamburguesa clásica -->
                             <div class="food-item">
                                 <h3 class="h5">Hamburguesa clásica</h3>
                                 <p class="text-muted">Deliciosa hamburguesa de carne con queso, lechuga y tomate.</p>
                                 <p>precio: ₡5000</p>
                                 <label for="hamburguesa-clasica">Cant:</label>
                                 <input type="number" id="hamburguesa-clasica" class="form-control d-inline-block w-25" value="0" min="1" readonly>
-                                <button class="btn btn-warning add-to-order mt-2">+</button>
-                                <button class="btn btn-warning remove-to-order mt-2">-</button>
+                                <button class="add-to-order mt-2">+</button>
+                                <button class="remove-to-order mt-2">-</button>
                             </div>
+                            <!-- Hamburguesa de pollo -->
                             <div class="food-item">
                                 <h3 class="h5">Hamburguesa de pollo</h3>
                                 <p class="text-muted">Pechuga de pollo a la plancha con lechuga y mayonesa.</p>
                                 <p>precio: ₡3000</p>
                                 <label for="hamburguesa-de-pollo">Cant:</label>
                                 <input type="number" id="hamburguesa-de-pollo" class="form-control d-inline-block w-25" value="0" min="1" readonly>
-                                <button class="btn btn-warning add-to-order mt-2">+</button>
-                                <button class="btn btn-warning remove-to-order mt-2">-</button>
+                                <button class="add-to-order mt-2">+</button>
+                                <button class="remove-to-order mt-2">-</button>
+                            </div>
+                            <!-- Hamburguesa de pollo a la parrilla -->
+                            <div class="food-item">
+                                <h3 class="h5">Hamburguesa de Pollo a la Parrilla</h3>
+                                <p class="text-muted">Pechuga de pollo, lechuga, tomate, y salsa de mostaza y miel..</p>
+                                <p>precio: ₡3000</p>
+                                <label for="hamburguesa-de-pollo-a-la-parrilla">Cant:</label>
+                                <input type="number" id="hamburguesa-de-pollo-a-la-parrilla" class="form-control d-inline-block w-25" value="0" min="1" readonly>
+                                <button class="add-to-order mt-2">+</button>
+                                <button class="remove-to-order mt-2">-</button>
+                            </div>
+                            <!-- Hamburguesa BBQ -->
+                            <div class="food-item">
+                                <h3 class="h5">Hamburguesa BBQ</h3>
+                                <p class="text-muted">Carne de res con salsa barbacoa, cebolla caramelizada, y queso cheddar.</p>
+                                <p>precio: ₡3500</p>
+                                <label for="hamburguesa-bbq">Cant:</label>
+                                <input type="number" id="hamburguesa-bbq" class="form-control d-inline-block w-25" value="0" min="1" readonly>
+                                <button class="add-to-order mt-2">+</button>
+                                <button class="remove-to-order mt-2">-</button>
+                            </div>
+                            <!-- Hamburguesa Vegetariana -->
+                            <div class="food-item">
+                                <h3 class="h5">Hamburguesa Vegetariana</h3>
+                                <p class="text-muted">Hamburguesa a base de legumbres, aguacate, lechuga, y salsa de yogur.</p>
+                                <p>precio: ₡3250</p>
+                                <label for="hamburguesa-vegetariana">Cant:</label>
+                                <input type="number" id="hamburguesa-vegetariana" class="form-control d-inline-block w-25" value="0" min="1" readonly>
+                                <button class="add-to-order mt-2">+</button>
+                                <button class="remove-to-order mt-2">-</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Food Category: Burritos -->
+                    <div class="food-category card mb-4 shadow-sm">
+                        <div class="card-body">
+                            <h1 class="card-title text-center text-primary" id="burritos">Burritos</h2>
+                            <!-- Burrito Clásico -->
+                            <div class="food-item">
+                                <h3 class="h5">Burrito Clásico</h3>
+                                <p class="text-muted">Tortilla de harina rellena de carne, frijoles, arroz, lechuga, y salsa.</p>
+                                <p>precio: ₡2300</p>
+                                <label for="burrito-clasico">Cant:</label>
+                                <input type="number" id="burrito-clasico" class="form-control d-inline-block w-25" value="0" min="1" readonly>
+                                <button class="add-to-order mt-2">+</button>
+                                <button class="remove-to-order mt-2">-</button>
+                            </div>
+                            <!-- Burrito de Pollo Asado -->
+                            <div class="food-item">
+                                <h3 class="h5">Burrito de Pollo Asado</h3>
+                                <p class="text-muted">Pollo asado, arroz, frijoles negros, pico de gallo, y guacamole.</p>
+                                <p>precio: ₡2850</p>
+                                <label for="burrito-de-pollo-asado">Cant:</label>
+                                <input type="number" id="burrito-de-pollo-asado" class="form-control d-inline-block w-25" value="0" min="1" readonly>
+                                <button class="add-to-order mt-2">+</button>
+                                <button class="remove-to-order mt-2">-</button>
+                            </div>
+                            <!-- Burrito Veggie -->
+                            <div class="food-item">
+                                <h3 class="h5">Burrito Veggie</h3>
+                                <p class="text-muted">Verduras asadas, arroz, frijoles, aguacate, y salsa de yogur.</p>
+                                <p>precio: ₡2950</p>
+                                <label for="burrito-veggie">Cant:</label>
+                                <input type="number" id="burrito-veggie" class="form-control d-inline-block w-25" value="0" min="1" readonly>
+                                <button class="add-to-order mt-2">+</button>
+                                <button class="remove-to-order mt-2">-</button>
+                            </div>
+                            <!-- Burrito de Carnitas -->
+                            <div class="food-item">
+                                <h3 class="h5">Burrito de Carnitas</h3>
+                                <p class="text-muted">Verduras asadas, arroz, frijoles, aguacate, y salsa de yogur.</p>
+                                <p>precio: ₡2950</p>
+                                <label for="burrito-de-carnitas">Cant:</label>
+                                <input type="number" id="burrito-de-carnitas" class="form-control d-inline-block w-25" value="0" min="1" readonly>
+                                <button class="add-to-order mt-2">+</button>
+                                <button class="remove-to-order mt-2">-</button>
+                            </div>
+                            <!-- Burrito de Mariscos -->
+                            <div class="food-item">
+                                <h3 class="h5">Burrito de Mariscos</h3>
+                                <p class="text-muted">Mariscos salteados, arroz, y salsa de chipotle.</p>
+                                <p>precio: ₡3200</p>
+                                <label for="burrito-de-mariscos">Cant:</label>
+                                <input type="number" id="burrito-de-mariscos" class="form-control d-inline-block w-25" value="0" min="1" readonly>
+                                <button class="add-to-order mt-2">+</button>
+                                <button class="remove-to-order mt-2">-</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Food Category: Tacos -->
+                    <div class="food-category card mb-4 shadow-sm">
+                        <div class="card-body">
+                            <h1 class="card-title text-center text-primary" id="tacos">Tacos</h2>
+                            <!-- Taco de Carne Asadao -->
+                            <div class="food-item">
+                                <h3 class="h5">Taco de Carne Asadao</h3>
+                                <p class="text-muted">Tortilla de maíz con carne asada, cebolla, cilantro, y salsa.</p>
+                                <p>precio: ₡3300</p>
+                                <label for="taco-de-carne-asadao">Cant:</label>
+                                <input type="number" id="taco-de-carne-asadao" class="form-control d-inline-block w-25" value="0" min="1" readonly>
+                                <button class="add-to-order mt-2">+</button>
+                                <button class="remove-to-order mt-2">-</button>
+                            </div>
+                            <!-- Taco al Pastor -->
+                            <div class="food-item">
+                                <h3 class="h5">Taco al Pastor</h3>
+                                <p class="text-muted">Cerdo marinado, piña, cebolla, y salsa..</p>
+                                <p>precio: ₡3050</p>
+                                <label for="taco-al-pastor">Cant:</label>
+                                <input type="number" id="taco-al-pastor" class="form-control d-inline-block w-25" value="0" min="1" readonly>
+                                <button class="add-to-order mt-2">+</button>
+                                <button class="remove-to-order mt-2">-</button>
+                            </div>
+                            <!-- Taco de Pescado -->
+                            <div class="food-item">
+                                <h3 class="h5">Taco de Pescado</h3>
+                                <p class="text-muted">Pescado rebozado, repollo, y salsa de aguacate..</p>
+                                <p>precio: ₡2900</p>
+                                <label for="taco-de-pescado">Cant:</label>
+                                <input type="number" id="taco-de-pescado" class="form-control d-inline-block w-25" value="0" min="1" readonly>
+                                <button class="add-to-order mt-2">+</button>
+                                <button class="remove-to-order mt-2">-</button>
+                            </div>
+                            <!-- Taco Vegano -->
+                            <div class="food-item">
+                                <h3 class="h5">Taco Vegano</h3>
+                                <p class="text-muted">Tofu o tempeh marinado, verduras asadas, y salsa de tahini.</p>
+                                <p>precio: ₡3600</p>
+                                <label for="taco-vegano">Cant:</label>
+                                <input type="number" id="taco-vegano" class="form-control d-inline-block w-25" value="0" min="1" readonly>
+                                <button class="add-to-order mt-2">+</button>
+                                <button class="remove-to-order mt-2">-</button>
                             </div>
                         </div>
                     </div>
@@ -76,15 +230,46 @@
                     <!-- Food Category: Fries -->
                     <div class="food-category card mb-4 shadow-sm">
                         <div class="card-body">
-                            <h2 class="card-title text-center text-primary">Papas fritas</h2>
+                            <h1 class="card-title text-center text-primary" id="papas">Papas</h2>
+                            <!-- Papas fritas regulares -->
                             <div class="food-item">
                                 <h3 class="h5">Papas fritas regulares</h3>
                                 <p class="text-muted">Patatas fritas crujientes y doradas.</p>
                                 <p>precio: ₡2000</p>
                                 <label for="papas-fritas-regulares">Cant:</label>
                                 <input type="number" id="papas-fritas-regulares" class="form-control d-inline-block w-25" value="0" min="1" readonly>
-                                <button class="btn btn-warning add-to-order mt-2">+</button>
-                                <button class="btn btn-warning remove-to-order mt-2">-</button>
+                                <button class="add-to-order mt-2">+</button>
+                                <button class="remove-to-order mt-2">-</button>
+                            </div>
+                            <!-- Papas Fritas con Queso -->
+                            <div class="food-item">
+                                <h3 class="h5">Papas Fritas con Queso</h3>
+                                <p class="text-muted">Patatas fritas crujientes y doradas.</p>
+                                <p>precio: ₡2050</p>
+                                <label for="papas-fritas-con-queso">Cant:</label>
+                                <input type="number" id="papas-fritas-con-queso" class="form-control d-inline-block w-25" value="0" min="1" readonly>
+                                <button class="add-to-order mt-2">+</button>
+                                <button class="remove-to-order mt-2">-</button>
+                            </div>
+                            <!-- Papas Fritas Cajún -->
+                            <div class="food-item">
+                                <h3 class="h5">Papas Fritas Cajún</h3>
+                                <p class="text-muted">Papas fritas sazonadas con especias cajún para un sabor picante.</p>
+                                <p>precio: ₡2200</p>
+                                <label for="papas-fritas-cajun">Cant:</label>
+                                <input type="number" id="papas-fritas-cajun" class="form-control d-inline-block w-25" value="0" min="1" readonly>
+                                <button class="add-to-order mt-2">+</button>
+                                <button class="remove-to-order mt-2">-</button>
+                            </div>
+                            <!-- Papas Fritas al Estilo Belga -->
+                            <div class="food-item">
+                                <h3 class="h5">Papas Fritas al Estilo Belga</h3>
+                                <p class="text-muted">Papas fritas sazonadas con especias cajún para un sabor picante.</p>
+                                <p>precio: ₡2200</p>
+                                <label for="papas-fritas-al-estilo-belga">Cant:</label>
+                                <input type="number" id="papas-fritas-al-estilo-belga" class="form-control d-inline-block w-25" value="0" min="1" readonly>
+                                <button class="add-to-order mt-2">+</button>
+                                <button class="remove-to-order mt-2">-</button>
                             </div>
                         </div>
                     </div>

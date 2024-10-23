@@ -223,7 +223,7 @@ const formatString = ( str ) => {
 
 const removeSymbols = ( word ) => {
     let letter = word
-    for(i = 0; i < 6; i++){
+    for(i = 0; i < 9; i++){
         letter = letter.replace('á', 'a');
         letter = letter.replace('é', 'e');
         letter = letter.replace('í', 'i');

@@ -42,6 +42,8 @@ body.dark-mode{
 
 .food-item {
     margin-bottom: 15px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4);
+    border-radius: 7%;
 }
 
 /* Input Field Styling */
@@ -50,17 +52,31 @@ input[type="number"] {
 }
 
 /* Add to Order Button */
-button.add-to-order {
-    background-color: #ff6600;
+.add-to-order {
+    background-color: rgb(0, 128, 0);
     border: none;
     color: white;
-    padding: 10px 20px;
+    padding: 10px 30px;
     border-radius: 5px;
     cursor: pointer;
 }
 
-button.add-to-order:hover {
-    background-color: #e65c00;
+.add-to-order:hover {
+    background-color: rgb(0, 108, 0);
+}
+
+/* Remove to Order Button */
+.remove-to-order {
+    background-color: rgb(255, 0, 0);
+    border: none;
+    color: white;
+    padding: 10px 32px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.remove-to-order:hover {
+    background-color: rgb(175, 0, 0);
 }
 
 /* Order Summary Styling */
