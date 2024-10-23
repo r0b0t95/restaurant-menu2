@@ -19,6 +19,8 @@
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-dark">
             <img src="https://iili.io/dpM4NTv.png" alt="logo.png" border="0">
+            <input type="text" id="orderUser" class="form-control  w-100" placeholder="A nombre de el pedido...">
+
         </nav>
     </div>
   </header>
@@ -36,7 +38,7 @@
                     <div id="order-items" class="mb-3">
                         <p>La orden esta vacia.</p>
                     </div>
-                    <strong>Total: $<span id="total-price">0.00</span></strong>
+                    <strong>Total: ₡<span id="total-price">0</span></strong>
                     <button id="place-order" class="btn btn-success mt-3 w-100">Realizar pedido</button>
                     <button id="watch-order" class="btn btn-info mt-3 w-100">Ver pedido</button>
                     <button id="remove-order" class="btn btn-danger mt-3 w-100">Borrar pedido</button>
@@ -53,18 +55,18 @@
                             <div class="food-item">
                                 <h3 class="h5">Hamburguesa clásica</h3>
                                 <p class="text-muted">Deliciosa hamburguesa de carne con queso, lechuga y tomate.</p>
-                                <p>price: $5.99</p>
-                                <label for="burger-quantity">Cant:</label>
-                                <input type="number" id="burger-quantity" class="form-control d-inline-block w-25" value="1" min="1">
+                                <p>precio: ₡5000</p>
+                                <label for="hamburguesa-clasica">Cant:</label>
+                                <input type="number" id="hamburguesa-clasica" class="form-control d-inline-block w-25" value="0" min="1" readonly>
                                 <button class="btn btn-warning add-to-order mt-2">+</button>
                                 <button class="btn btn-warning remove-to-order mt-2">-</button>
                             </div>
                             <div class="food-item">
                                 <h3 class="h5">Hamburguesa de pollo</h3>
                                 <p class="text-muted">Pechuga de pollo a la plancha con lechuga y mayonesa.</p>
-                                <p>price: $6.99</p>
-                                <label for="chicken-quantity">Cant:</label>
-                                <input type="number" id="chicken-quantity" class="form-control d-inline-block w-25" value="1" min="1">
+                                <p>precio: ₡3000</p>
+                                <label for="hamburguesa-de-pollo">Cant:</label>
+                                <input type="number" id="hamburguesa-de-pollo" class="form-control d-inline-block w-25" value="0" min="1" readonly>
                                 <button class="btn btn-warning add-to-order mt-2">+</button>
                                 <button class="btn btn-warning remove-to-order mt-2">-</button>
                             </div>
@@ -78,9 +80,9 @@
                             <div class="food-item">
                                 <h3 class="h5">Papas fritas regulares</h3>
                                 <p class="text-muted">Patatas fritas crujientes y doradas.</p>
-                                <p>price: $2.49</p>
-                                <label for="fries-quantity">Cant:</label>
-                                <input type="number" id="fries-quantity" class="form-control d-inline-block w-25" value="1" min="1">
+                                <p>precio: ₡2000</p>
+                                <label for="papas-fritas-regulares">Cant:</label>
+                                <input type="number" id="papas-fritas-regulares" class="form-control d-inline-block w-25" value="0" min="1" readonly>
                                 <button class="btn btn-warning add-to-order mt-2">+</button>
                                 <button class="btn btn-warning remove-to-order mt-2">-</button>
                             </div>
