@@ -1,133 +1,606 @@
-/*
- nav color ->  11 18 31
- card color -> 26 35 50
-*/
+/* 
+ * Comida Rápida - Complete Responsive CSS
+ * 
+ * Color Palette:
+ * Primary: #FF6B35 (Vibrant Orange)
+ * Secondary: #2EC4B6 (Teal)
+ * Accent: #FFCE00 (Yellow)
+ * Dark: #333333 (Dark Gray)
+ * Light: #F7F7F7 (Off-White)
+ * Background: #FFFFFF (White)
+ */
 
-header{
-     background-color: rgb(11, 18, 31)
-}
-
-body.dark-mode{
-     background-color: rgb(17, 25, 39);
-     color: white;
-     .icons{
-          color: white;
-     }
-}
-
-.icons{
-     color: rgb(17, 25, 39);
-}
-
-.nav-link:hover{
-     transition: transform 0.5s ease;
-     transform: scale(1.05);
-}
-
-.fab{
-     margin: 0% 0.6% 6% 0.6%;
-}
-
-.fab:hover{
-     transition: transform 2.5s ease;
-     animation: none;
-     transform: translateY(-12px);
-}
-
-
-/* Card Enhancements */
-.food-category {
-    border-radius: 10px;
-}
-
-.food-item {
-    margin-bottom: 15px;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4);
-    border-radius: 7%;
-}
-
-/* Input Field Styling */
-input[type="number"] {
-    width: 60px;
-}
-
-/* Add to Order Button */
-.add-to-order {
-    background-color: rgb(0, 128, 0);
-    border: none;
-    color: white;
-    padding: 10px 30px;
-    border-radius: 5px;
+/* Base Styles & Reset */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .button-menu {
+    display: none;
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    z-index: 1000;
+  }
+  
+  .button-menu .menu-icon {
+    width: 55px;
+    height: 55px;
+    background-color: #FF6B35; /* Primary orange from main palette */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.45rem;
     cursor: pointer;
-}
+    box-shadow: 0 2px 8px rgba(255, 107, 53, 0.4);
+    transition: all 0.3s ease;
+  }
+  
+  .button-menu .menu-icon:hover {
+    background-color: #e04e1a; /* Darker orange on hover */
+    transform: scale(1.05);
+  }
+  
+  .button-menu .nav-menu {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background-color: #FFFFFF; /* White background to match main content */
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    padding: 10px;
+    display: none;
+    flex-direction: column;
+    min-width: 160px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    animation: menuSlideIn 0.3s ease;
+  }
+  
+  @keyframes menuSlideIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .button-menu .nav-menu a {
+    color: #333333; /* Dark text color */
+    text-decoration: none;
+    padding: 10px 15px;
+    text-align: left;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    margin-bottom: 2px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .button-menu .nav-menu a:hover {
+    background-color: #F7F7F7;
+    color: #FF6B35;
+  }
+  
+  .button-menu .nav-menu a:last-child {
+    margin-bottom: 0;
+  }
+  
+  /* Add icons to menu items if desired */
+  .button-menu .nav-menu a i {
+    margin-right: 8px;
+    font-size: 16px;
+  }
+  
+  .button-menu {
+    display: block;
+  }
+  
+  /* For active state */
+  .button-menu .menu-icon.active {
+    background-color: #2EC4B6; /* Teal from the main palette */
+    transform: rotate(90deg);
+  }
+  
+  .button-menu .nav-menu.show {
+    display: flex;
+  }
+  
+  /* If needed for screen readers */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+    
+  #startScreen, .container, main {
+    padding-top: 0;
+  }
 
-.add-to-order:hover {
-    background-color: rgb(0, 108, 0);
-}
-
-/* Remove to Order Button */
-.remove-to-order {
-    background-color: rgb(255, 0, 0);
-    border: none;
+  body {
+    background-color: #F7F7F7;
+    color: #333333;
+    line-height: 1.6;
+  }
+  
+  /* Navbar Styles */
+  .navbar {
+    background-color: #FF6B35;
+    padding: 15px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .navbar img {
+    height: 60px;
+    max-width: 90%;
+  }
+  
+  /* Layout Grid for Main Content */
+  .main-container {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 30px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  @media (max-width: 992px) {
+    .main-container {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  /* Order Summary Section */
+  #order-summary {
+    background-color: #FFFFFF;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    position: sticky;
+    top: 20px;
+    max-height: calc(100vh - 40px);
+    overflow-y: auto;
+    margin-bottom: 20px;
+  }
+  
+  .card-title {
+    color: #2EC4B6;
+    margin-bottom: 20px;
+    font-weight: 700;
+    font-size: 1.6rem;
+  }
+  
+  #orderUser {
+    border: 2px solid #E0E0E0;
+    border-radius: 8px;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    width: 100%;
+  }
+  
+  #orderUser:focus {
+    border-color: #2EC4B6;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(46, 196, 182, 0.3);
+  }
+  
+  #order-items {
+    min-height: 60px;
+    margin-bottom: 20px;
+    border-top: 1px solid #E0E0E0;
+    border-bottom: 1px solid #E0E0E0;
+    padding: 15px 0;
+  }
+  
+  .order-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    margin-bottom: 8px;
+    border-bottom: 1px dashed #e0e0e0;
+  }
+  
+  .order-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+  }
+  
+  .remove-order-item {
+    background-color: #FF6B35;
     color: white;
-    padding: 10px 32px;
-    border-radius: 5px;
+    border: none;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
-}
+    font-weight: bold;
+    transition: background-color 0.2s;
+  }
+  
+  .remove-order-item:hover {
+    background-color: #e04e1a;
+  }
+  
+  .trash-can, .fa-plus, .fa-minus {
+    font-size: 1.4rem;
+  }
 
-.remove-to-order:hover {
-    background-color: rgb(175, 0, 0);
-}
-
-/* Order Summary Styling */
-#order-summary {
-    background-color: #ffffff;
-    border-radius: 10px;
-    padding: 15px;
-}
-
-#order-items p {
-    color: #6c757d;
-    text-align: center;
-}
-
-#total-price {
+  #total-price {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #2EC4B6;
+  }
+  
+  #order-summary button {
+    width: 100%;
+    padding: 12px 15px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  #place-order {
+    background-color: #2EC4B6;
+    color: white;
+  }
+  
+  #place-order:hover {
+    background-color: #25a99d;
+    transform: translateY(-2px);
+  }
+  
+  #remove-order {
+    background-color: #FF6B35;
+    color: white;
+  }
+  
+  #remove-order:hover {
+    background-color: #e04e1a;
+    transform: translateY(-2px);
+  }
+  
+  /* Menu Section */
+  .menu-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+  }
+  
+  .container {
+    margin-bottom: 30px;
+  }
+  
+  /* Category Headers */
+  .container::before {
+    content: attr(data-category);
+    display: block;
     font-size: 1.5rem;
-}
-
-/* Place Order Button */
-#place-order {
-    background-color: #28a745;
-    color: white;
+    font-weight: 700;
+    color: #FF6B35;
+    margin-bottom: 15px;
+    border-bottom: 3px solid #FF6B35;
+    padding-bottom: 5px;
+  }
+  
+  #hamburger-container::before {
+    content: "Hamburguesas";
+  }
+  
+  #burrito-container::before {
+    content: "Burritos";
+  }
+  
+  #taco-container::before {
+    content: "Tacos";
+  }
+  
+  #fries-container::before {
+    content: "Papas Fritas";
+  }
+  
+  /* Food Item Cards */
+  .card {
+    background-color: #FFFFFF;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    padding-right: 60px; /* Space for vertical buttons */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+    min-height: 180px;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  .card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 6px;
+    height: 100%;
+    background-color: #FFCE00;
+  }
+  
+  .card-title {
     font-size: 1.25rem;
-    padding: 10px 0;
-    border-radius: 5px;
-}
-
-#remove-order {
-    background-color: #a72828;
+    font-weight: 700;
+    color: #333333;
+    margin-bottom: 10px;
+  }
+  
+  .card-description {
+    color: #666666;
+    margin-bottom: 15px;
+    flex-grow: 1;
+  }
+  
+  .card-price {
+    font-weight: 700;
+    color: #FF6B35;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+  
+  .card-label {
+    font-weight: 600;
+    margin-right: 10px;
+  }
+  
+  .card-input {
+    width: 50px;
+    text-align: center;
+    padding: 5px;
+    border: 2px solid #E0E0E0;
+    border-radius: 4px;
+    margin-right: 10px;
+  }
+  
+  .card-buttons {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: 40px;
+    top: 80%;
+    transform: translateY(-60%);
+  }
+  
+  .card button {
+    width: 70px;
+    height: 70px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card button:last-child {
+    margin-bottom: 0;
+  }
+  
+  .add-to-order {
+    background-color: #2EC4B6;
     color: white;
-    font-size: 1.25rem;
-    padding: 10px 0;
-    border-radius: 5px;
-}
-
-#watch-order {
-    background-color: #2828a7;
+  }
+  
+  .add-to-order:hover {
+    background-color: #25a99d;
+  }
+  
+  .remove-to-order {
+    background-color: #FF6B35;
     color: white;
-    font-size: 1.25rem;
-    padding: 10px 0;
-    border-radius: 5px;
-}
+  }
+  
+  .remove-to-order:hover {
+    background-color: #e04e1a;
+  }
+  
+  /* Item Quantity Controls */
+  .quantity-control {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  /* Mobile Optimizations */
+  @media (max-width: 767px) {
+    .main-container {
+      padding: 0 10px;
+    }
+    
+    .menu-container {
+      grid-template-columns: 1fr;
+    }
+    
+    #order-summary {
+      position: relative;
+      top: 0;
+      margin-bottom: 30px;
+    }
+    
+    .card {
+      padding: 15px;
+    }
+    
+    .navbar img {
+      height: 50px;
+    }
 
-#place-order:hover {
-    background-color: #1d7830;
-}
+    .footer-text {
+      font-size: 12px;
+    }
+      
+    .footer-logo {
+      width: 60px;
+    }
+      
+    .footer-brand {
+      font-size: 14px;
+    }
+  }
+  
+  /* Animation for Add to Cart */
+  @keyframes addedToCart {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+  }
+  
+  .added-to-cart {
+    animation: addedToCart 0.5s ease;
+  }
+  
+  /* Scrollbar Styling */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #FF6B35;
+    border-radius: 10px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #e04e1a;
+  }
+  
+  /* Notification Styles - Already present in your HTML but enhanced */
+  .input-required {
+    border: 2px solid #ff4d4d !important;
+    box-shadow: 0 0 5px rgba(255, 77, 77, 0.5);
+    animation: shake 0.5s linear;
+  }
+  
+  .name-notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #ff4d4d;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    animation: slideIn 0.3s ease-out forwards;
+  }
+  
+  .fade-out {
+    animation: fadeOut 0.5s ease-out forwards;
+  }
+  
+  @keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+    20%, 40%, 60%, 80% { transform: translateX(5px); }
+  }
+  
+  @keyframes slideIn {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+  }
+  
+  @keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+  }
+  
+  /* Cart Empty State */
+  #order-items:empty::before {
+    content: 'La orden está vacía';
+    display: block;
+    color: #888;
+    text-align: center;
+    padding: 20px 0;
+    font-style: italic;
+  }
 
-#remove-order:hover {
-    background-color: #761b1b;
-}
+  /* Footer Styles */
+  /* Estilos para el Footer */
+.site-footer {
+    background-color: #000000;
+    width: 100%;
+  }
+  
+  .footer-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .footer-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .footer-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+  }
+  
+  .footer-link:hover {
+    transform: translateY(-3px);
+  }
+  
+  .footer-text {
+    color: #FFFFFF;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    margin-bottom: 8px;
+    opacity: 0.8;
+  }
+  
+  .footer-logo {
+    width: 80px;
+    height: auto;
+    margin: 10px 0;
+    filter: brightness(1.1);
+  }
+  
 
-#watch-order:hover {
-    background-color: #1f1f88;
-}

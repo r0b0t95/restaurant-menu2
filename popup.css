@@ -1,0 +1,149 @@
+/* 
+ * Enhanced Popup Styles for Comida Rápida
+ * Matching the main site color scheme and design language
+ */
+
+/* Popup overlay background */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.75);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000; /* Higher than other elements */
+    backdrop-filter: blur(3px); /* Subtle blur effect for depth */
+}
+
+/* Popup content container */
+.popup-content {
+    background-color: #FFFFFF;
+    width: 90%;
+    max-width: 1000px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+    position: relative;
+    animation: popupFadeIn 0.4s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+    overflow: hidden; /* Keep content within rounded corners */
+}
+
+/* Enhanced animation with slight bounce effect */
+@keyframes popupFadeIn {
+    0% { opacity: 0; transform: translateY(-30px) scale(0.95); }
+    70% { transform: translateY(5px) scale(1.01); }
+    100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Close button styling */
+.close-popup {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    font-size: 28px;
+    cursor: pointer;
+    color: #FF6B35;
+    z-index: 1001;
+    transition: all 0.2s;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.close-popup:hover {
+    background-color: rgba(255, 107, 53, 0.1);
+    transform: rotate(90deg);
+}
+
+/* Popup content body */
+.popup-body {
+    padding: 25px;
+    text-align: center;
+}
+
+/* Image styling */
+.popup-body img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading styles */
+.popup-body h2 {
+    color: #333333;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+/* Paragraph styles */
+.popup-body p {
+    font-family: 'Poppins', sans-serif;
+    color: #666666;
+    margin-bottom: 25px;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+/* Call to action button */
+.popup-button {
+    display: inline-block;
+    background-color: #FF6B35; /* Match primary color */
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    padding: 12px 28px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    box-shadow: 0 4px 10px rgba(255, 107, 53, 0.3);
+}
+
+.popup-button:hover {
+    background-color: #e04e1a;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(255, 107, 53, 0.4);
+}
+
+/* Logo styling if used */
+.logo {
+    max-width: 120px;
+    margin: 0 auto 15px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 767px) {
+    .popup-content {
+        width: 90%;
+        max-width: 400px;
+    }
+    
+    .popup-body {
+        padding: 20px 15px;
+    }
+    
+    .popup-body h2 {
+        font-size: 0.7rem;
+    }
+}
+
+/* For animation when closing */
+.popup-closing {
+    animation: popupFadeOut 0.3s forwards;
+}
+
+@keyframes popupFadeOut {
+    from { opacity: 1; transform: scale(1); }
+    to { opacity: 0; transform: scale(0.9); }
+}
