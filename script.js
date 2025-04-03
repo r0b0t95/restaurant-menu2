@@ -1,4 +1,4 @@
-const phoneNumber = "50684006669";
+const phoneNumber = "50671260048";
 
 const getProductInfo = ( id, foodType ) => {
     let container;
