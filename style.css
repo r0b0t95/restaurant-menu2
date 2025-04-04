@@ -388,16 +388,15 @@
   
   .card-buttons {
     display: flex;
-    flex-direction: column;
     position: absolute;
     right: 40px;
-    top: 80%;
-    transform: translateY(-60%);
+    top: 70%;
+    transform: translateY(-20%);
   }
   
   .card button {
-    width: 70px;
-    height: 70px;
+    width: 60px;
+    height: 60px;
     border: none;
     border-radius: 50%;
     cursor: pointer;
@@ -418,6 +417,7 @@
   .add-to-order {
     background-color: #2EC4B6;
     color: white;
+    margin: 7px
   }
   
   .add-to-order:hover {
@@ -427,6 +427,7 @@
   .remove-to-order {
     background-color: #FF6B35;
     color: white;
+    margin: 7px
   }
   
   .remove-to-order:hover {
